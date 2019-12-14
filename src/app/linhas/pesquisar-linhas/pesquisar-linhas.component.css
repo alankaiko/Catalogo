@@ -1,0 +1,12 @@
+input {
+  background-color: #fff;
+}
+
+.linha {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  border:1px solid #428bca;
+  border-radius: 3px;
+}

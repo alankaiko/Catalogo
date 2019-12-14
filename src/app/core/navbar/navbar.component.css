@@ -1,0 +1,63 @@
+.menuInicial {
+	width: 100%;
+	height: 60px;
+	top: 0px;
+	margin: 0 auto;
+	position: fixed;
+  z-index: 1000;
+}
+
+.menuInicial .topbar {
+  background-color: #293a4a;
+  border-color: #293a4a;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	width: 100%;
+	height: 55px;
+	outline: 0 none;
+	box-sizing: border-box;
+	background: #ffffff;
+	-webkit-box-shadow: 0 20px 8px 0 rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  text-align: right;
+}
+
+:host /deep/ p-menubar .ui-menubar{
+  border: none;
+}
+
+.menuInicial .logo {
+  height: 45px;
+}
+
+.icone {
+	line-height: 60px;
+	font-size: 22px;
+	color: #ffffff;
+	-moz-transition: color 0.3s;
+	-o-transition: color 0.3s;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.iconemenu {
+  display: none;
+}
+
+@media(max-width:1000px){
+  .camposelecao {
+    display: none;
+  }
+}
+
+@media(max-width:600px){
+  .iconemenu{
+    display: block;
+  }
+
+  .barramenu {
+    display: none;
+    border: none;
+  }
+}

@@ -1,0 +1,141 @@
+#painelEsquerdo {
+	position: absolute;
+	width: 20.5%;
+	float: left;
+}
+
+#painelEsquerdo .layout-sidebar {
+	position: fixed;
+	top: 54px;
+	height: 100%;
+	width: 60px;
+	background-color: #2C2C2C;
+	z-index: 100;
+	-moz-transition: width 0.3s;
+	-o-transition: width 0.3s;
+	-webkit-transition: width 0.3s;
+	transition: width 0.3s;
+}
+
+#layout-menu {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	display: block;
+}
+
+#layout-aberto .menuopcao.active-menuitem {
+	display: block;
+}
+
+#layout-menu li {
+	list-style-type: none;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#layout-menu>li>a {
+	height: 60px;
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+}
+
+#layout-menu li a .icone {
+	line-height: 60px;
+	font-size: 22px;
+	color: #ffffff;
+	-moz-transition: color 0.3s;
+	-o-transition: color 0.3s;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+#layout-menu li a .icone:hover {
+	color: #ff88c7;
+}
+
+#layout-menu li:hover {
+	background-color: #1f1f1f;
+}
+
+#layout-menu li.active-item {
+	background-color: #1f1f1f;
+}
+
+
+#layout-aberto {
+	position: absolute;
+  width: 200px;
+  display: none;
+	left: 60px;
+	top: 0;
+	height: 100%;
+	background-color: #1f1f1f;
+	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+	-moz-transition: margin-left 0.3s;
+	-o-transition: margin-left 0.3s;
+	-webkit-transition: margin-left 0.3s;
+	transition: margin-left 0.3s;
+}
+
+#layout-aberto ul li a {
+	display: block;
+	padding: 6px;
+	border-radius: 2px;
+	text-decoration: none;
+	-moz-transition: background-color 0.3s;
+	-o-transition: background-color 0.3s;
+	-webkit-transition: background-color 0.3s;
+	transition: background-color 0.3s;
+	color: #c4c4c4;
+}
+
+#layout-aberto ul {
+	list-style-type: none;
+	padding: 12px 0;
+}
+
+#layout-aberto ul li:hover {
+	background-color: #6a6a6a;
+	color: #ffffff;
+}
+
+#layout-aberto ul li i {
+	font-size: 150%;
+}
+
+#layout-aberto ul li span {
+	font-size: 90%;
+}
+
+.layout-wrapper-menu-active #menuEsquerda #menu-button span{
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+#layout-aberto .menuopcao.ativando-lista {
+	display: block;
+}
+
+
+.pesquisa {
+  padding-top: 10px;
+}
+
+@media(max-width: 640px){
+  #layout-aberto {
+    display: none;
+  }
+}
+
+@media(max-width: 865px){
+  #painelEsquerdo {
+    display: none;
+  }
+}

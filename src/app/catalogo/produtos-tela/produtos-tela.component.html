@@ -1,0 +1,25 @@
+<div class="catalogo">
+  <div class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+      <p-dataView class="tabela" [value]="produtos" [paginator]="true" [rows]="filtro.itensPorPagina"
+        [lazy]="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)" layout="grid">
+        <p-header class="ui-g">
+            <form class="ui-g-12" autocomplete="off" (ngSubmit)="Consultar()">
+              <input class="pesquisacod" pInputText type="text" name="codigo"
+                [(ngModel)]="filtro.codigo" placeholder="Código do Produto">
+
+              <input class="pesquisadesc" pInputText type="text" name="codigo"
+                [(ngModel)]="filtro.descricao" placeholder="Descrição do Produto">
+
+              <button class=" botaopesquisar btn btn-light" style="width: 15%; float: right;" type="submit">Pesquisar</button>
+              <button class=" iconepesquisar btn btn-light pi pi-search" type="submit"></button>
+            </form>
+        </p-header>
+
+        <ng-template let-produto pTemplate="gridItem">
+          <app-card-produtos [prod]="produto" class="ui-g-12 ui-md-6 ui-lg-3 cartaos"></app-card-produtos>
+        </ng-template>
+    </p-dataView>
+    </div>
+  </div>
+</div>

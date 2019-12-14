@@ -1,0 +1,57 @@
+<h1>{{ editando ? 'Editar' : 'Novo'}} Produto</h1>
+<hr>
+
+<div class="classecad">
+
+
+  <p-fieldset legend="{{ editando ? 'Editar' : 'Novo'}}">
+    <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="Salvar()" class="formu">
+      <div class="p-grid">
+        <div class="ui-g-12 ui-md-6 ui-lg-4 ui-fluid">
+          <label>Código</label>
+          <input [readonly]= "editando" type="text" pInputText ng-model="text" name="codigo" formControlName="codigo"
+             required (keypress)="caractereespecial($event)" style="text-transform:uppercase">
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+          <label>Descrição</label>
+          <input type="text" pInputText ng-model="text" name="descricao" formControlName="descricao"
+            style="text-transform:uppercase">
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+          <label>Desc. Complementar</label>
+          <input type="text" pInputText ng-model="text" name="descricaocomplementar"
+            formControlName="descricaocomplementar" style="text-transform:uppercase">
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid" formGroupName="linha">
+          <label>Linha</label>
+          <p-dropdown formControlName="id" [options]="linhas" placeholder="Selecione" name="linha"></p-dropdown>
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid" formGroupName="grupo">
+          <label>Grupo</label>
+          <p-dropdown formControlName="id" [options]="grupos" [autoWidth]="false" placeholder="Selecione o grupo" name="grupo"></p-dropdown>
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+          <label>KG/m</label>
+          <input (keypress)="CaracterPeso($event)" type="text" maxlength="6" pInputText ng-model="text" name="peso" formControlName="peso" placeholder="0.00">
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid" style="text-align: right;">
+          <h3 class="first">Adicionar Imagens</h3>
+          <input type="file" (change)="inputFileChange($event)"/>
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+          <button class="btn btn-primary" type="submit" style="margin-right: 8px;">Salvar</button>
+          <button class="btn btn-outline-secondary" routerLink="/produtos">Cancelar</button>
+        </div>
+      </div>
+    </form>
+  </p-fieldset>
+
+
+</div>

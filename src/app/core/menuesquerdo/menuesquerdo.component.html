@@ -1,0 +1,126 @@
+<div id="painelEsquerdo">
+  <div class="layout-sidebar">
+    <ul id="layout-menu">
+      <form id="formesquerdo">
+        <li class="sidebar-arquivo">
+          <a href="javascript:;"pTooltip="Home">
+            <i class="icone pi pi-home"></i>
+          </a>
+        </li>
+
+        <li class="sidebar-atendimento">
+          <a href="javascript:;" pTooltip="Quem Somos">
+            <i class="icone pi pi-align-justify"></i>
+          </a>
+        </li>
+
+        <li class="sidebar-cadastro">
+          <a href="javascript:;" pTooltip="Catálogos">
+            <i class="icone pi pi-file-o"></i>
+          </a>
+        </li>
+
+        <li class="sidebar-usuarios">
+          <a href="javascript:;" pTooltip="Fornecedores">
+            <i class="icone pi pi-sitemap"></i>
+          </a>
+        </li>
+
+        <li class="sidebar-usuarios">
+          <a href="javascript:;" pTooltip="Pesquisar">
+            <i class="icone pi pi-search"></i>
+          </a>
+        </li>
+
+      </form>
+    </ul>
+
+    <div id="layout-aberto">
+      <ul id="arquivo" class="menuopcao">
+        <form>
+          <li class="clearfix">
+            <a href="#">
+              <i class="icone fa fa-book"></i>
+              <span>Home</span>
+            </a>
+          </li>
+        </form>
+      </ul>
+
+      <ul id="atendimento" class="menuopcao">
+        <form>
+          <li>
+            <a href="#">
+              <i class="icone fa fa-medkit"></i>
+              <span>Localização</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="icone fa fa-user"></i>
+              <span>História</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="icone fa fa-user"></i>
+              <span>Empresas do Grupo</span>
+            </a>
+          </li>
+        </form>
+      </ul>
+
+      <ul id="cadastro" class="menuopcao" [hidden]=!exibecatalogo>
+        <form>
+          <li>
+            <a href="#">
+              <i class="icone fa fa-hospital-o"></i>
+              <span>Home Center</span>
+            </a>
+          </li>
+
+          <li>
+            <a>
+              <i class="icone fa fa-h-square"></i>
+              <span>Alumínio</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="icone fa fa-user"></i>
+              <span>Vidros</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="icone fa fa-user"></i>
+              <span>Acessórios</span>
+            </a>
+          </li>
+        </form>
+      </ul>
+
+      <ul id="usuarios" class="menuopcao" [hidden]="!exibefornecedores">
+        <form>
+          <li>
+            <a href="#">
+              <i class="icone fa fa-user"></i>
+              <span>Fornecedores</span>
+            </a>
+          </li>
+
+        </form>
+      </ul>
+
+      <div class="pesquisa" [hidden]="exibepesquisa">
+        <input type="text" pInputText placeholder="Pesquisar">
+        <button pButton label="Buscar" icon="pi pi-sign-out"></button>
+      </div>
+
+    </div>
+  </div>
+</div>

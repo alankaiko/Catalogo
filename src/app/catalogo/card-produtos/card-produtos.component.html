@@ -1,0 +1,20 @@
+<p-card class="cartao">
+  <p-header>
+    <p-lightbox type="content" class="laitbox">
+      <a class="group" href="#" (click)="getImageFromService()">
+          <img class="imagem card-img-top" [attr.src]="imagemToShow">
+      </a>
+      <img class="laitimagem" [attr.src]="imagelightbox">
+      <span class="spandesc">Desc:<label>{{produto.descricao}}</label></span>
+      <span class="spanpeso">Peso KG/m:<label>{{produto.peso}}</label></span>
+    </p-lightbox>
+
+  </p-header>
+  <div class="line"></div>
+    <div class="ui-card-block"><label><a class="linker" [routerLink]="['/detalhes', produto.id]">{{produto.codigo}}</a></label></div>
+  <p-footer>
+    <div class="ui-card-content"><span class="subtitulo">{{produto.descricao}}</span></div>
+    <!-- <button pButton type="button" [routerLink]="['/produtos', produto.id]" icon="pi pi-pencil" class="ui-button-secondary"></button>-->
+  </p-footer>
+</p-card>
+

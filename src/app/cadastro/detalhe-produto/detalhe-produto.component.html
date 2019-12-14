@@ -1,0 +1,21 @@
+  <section>
+    <div class="classe ui-g ui-fluid">
+        <div class="ui-g-12">
+          <div style="float: left;">
+            <span>cod: <label> {{produto?.codigo}}</label></span><br>
+          </div>
+
+          <div style="float: right; display: inline;">
+            <span>peso: <label>Peso: {{produto?.peso}} Kg/m</label></span><br>
+            <span>Dimensão: <label>Peça com {{produto?.tamanho}}m</label></span><br>
+          </div>
+
+        </div>
+
+        <img class="laitimagem" [attr.src]="imagelightbox">
+
+        <div class="ui-g ui-fluid">
+          <span>Desc: <label>{{produto?.descricao}}</label></span><br>
+        </div>
+    </div>
+  </section>

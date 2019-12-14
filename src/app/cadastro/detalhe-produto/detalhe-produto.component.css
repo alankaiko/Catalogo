@@ -1,0 +1,36 @@
+section {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+
+.classe {
+  width: 75%;
+  padding: 20px;
+  border:1px solid #428bca;
+  border-radius: 2px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+
+img {
+  text-align: center;
+  width: 98%;
+  height: auto;
+  margin: 0 auto;
+
+  border: 1px solid;
+  border-color:rgba(51, 51, 51, 0.671);
+  border-radius: 3px;
+  box-sizing:border-box;
+}
+
+span{
+  color: gray;
+  font-size:  110%;
+}
+
+label {
+  color: #007ad9;
+  font-size: 135%;
+}

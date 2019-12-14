@@ -1,0 +1,64 @@
+.catalogo {
+  width: 98%;
+  margin: 0 auto;
+}
+
+:host /deep/ p-dataView .ui-dataview-header{
+  background-color:#428bca;
+  border:1px solid #428bca;
+}
+
+:host /deep/ p-dataView .ui-dataview-content{
+  border:1px solid #428bca;
+}
+
+:host /deep/ p-dataView .ui-paginator-bottom {
+  border-bottom:1px solid #428bca;
+  border-left:1px solid #428bca;
+  border-right: 1px solid #428bca;
+}
+
+.pesquisacod {
+  width: 13%;
+}
+
+.pesquisadesc {
+  width: 23%;
+  margin-left: 5px;
+}
+
+.iconepesquisar {
+  display: none;
+}
+
+@media(max-width:1220px){
+  .pesquisacod {
+    width: 20%;
+  }
+
+  .pesquisadesc {
+    width: 40%;
+  }
+}
+
+@media(max-width:680px){
+  .pesquisacod {
+    width: 30%;
+  }
+
+  .pesquisadesc {
+    width: 50%;
+  }
+
+  .botaopesquisar {
+    display: none;
+  }
+
+  .iconepesquisar {
+    display: block;
+    width: 18%;
+    height: 33px;
+    float: right;
+    margin-top: 1px;
+  }
+}
