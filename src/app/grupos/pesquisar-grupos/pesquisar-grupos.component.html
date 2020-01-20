@@ -1,58 +1,35 @@
 <div class="grupo">
-    <div class="classe">
-        <div class="ui-g">
-           <h3>{{ editando ? 'Editar' : 'Novo'}} Grupo</h3>
-          <div class="ui-g-12 ui-fluid" style="border-bottom: 1px solid;">
-            <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="Salvar()">
-              <div class="ui-g-4">
-                <label>Abreviação</label>
-                <input type="text" pInputText ng-model="text" name="abreviacao" formControlName="abreviacao"
-                  style="text-transform:uppercase">
-              </div>
+    <div class="ui-g">
+        <div class="ui-g-12">
+          <p-table id="tabela" [value]="grupos" [responsive]="true" [paginator]="true" [rows]="filtro.itensPorPagina"
+            [lazy]="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 8%;">Código</th>
+                    <th style="width: 15%;">SKU</th>
+                    <th style="width: 40%;">Descrição</th>
+                    <th style="width: 7%; text-align: center;">Opções</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-grupo>
+                <tr>
+                    <td style="text-align: center;">{{grupo.id}}</td>
+                    <td>{{grupo.abreviacao}}</td>
+                    <td>{{grupo.nomegrupo}}</td>
+                    <td style="text-align: center;">
+                      <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                        [routerLink]="['/grupo', grupo.id]"></a>
 
-              <div class="ui-g-7">
-                <label>Descrição</label>
-                <input type="text" pInputText ng-model="text" name="nomegrupo" formControlName="nomegrupo"
-                  style="text-transform:uppercase">
-              </div>
-
-              <div class="ui-g-1" style="text-align: right; margin-top: 33px;">
-                  <button class="btn btn-primary" type="submit" (click)="Consultar(0)">Salvar</button>
-              </div>
-
-            </form>
-
-          </div>
-
-
-
-          <div>
-            <p-table id="tabela" [value]="grupos" [responsive]="true" [paginator]="true" [rows]="filtro.itensPorPagina"
-              [lazy]="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)">
-              <ng-template pTemplate="header">
-                  <tr>
-                      <th style="width: 8%;">Código</th>
-                      <th style="width: 15%;">Abreviação</th>
-                      <th style="width: 40%;">Descrição</th>
-                      <th style="width: 7%; text-align: center;">Opções</th>
-                  </tr>
-              </ng-template>
-              <ng-template pTemplate="body" let-grupo>
-                  <tr>
-                      <td style="text-align: center;">{{grupo.id}}</td>
-                      <td>{{grupo.abreviacao}}</td>
-                      <td>{{grupo.nomegrupo}}</td>
-                      <td style="text-align: center;">
-                          <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
-                          (click)="BuscarPeloId(grupo)"></a>
-
-                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
-                          (click)="Excluir(grupo)"></button>
-                      </td>
-                  </tr>
-              </ng-template>
+                      <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                        (click)="Excluir(grupo)"></button>
+                    </td>
+                </tr>
+            </ng-template>
           </p-table>
-          </div>
+        </div>
+
+        <div class="ui-g-12" style="text-align: right;">
+          <a pButton label="Novo Registro" routerLink="/grupo/novo"></a>
         </div>
 
       </div>

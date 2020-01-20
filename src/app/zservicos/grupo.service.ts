@@ -56,8 +56,8 @@ export class GrupoService {
   }
 
 
-  Adicionar(grupo) {
-    return this.http.post(`${this.url}`, grupo).subscribe(response => response);
+  Adicionar(grupo): Promise<any> {
+    return this.http.post(`${this.url}`, grupo).toPromise().then(response => response);
   }
 
   BuscarPorId(id: number): Promise<any> {
@@ -79,7 +79,7 @@ export class GrupoService {
   }
 
   Remover(id: number) {
-    this.http.delete(`${this.url}/${id}`)
+    return this.http.delete(`${this.url}/${id}`)
       .toPromise()
       .then(() => null);
   }

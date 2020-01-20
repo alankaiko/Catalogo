@@ -1,0 +1,42 @@
+<div class="ui-g classecad">
+  <p-fieldset legend="{{ editando ? 'Editar' : 'Novo'}}">
+    <div class="ui-g-12 ui-fluid" style="margin: 0 auto;">
+      <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="Salvar()">
+        <div class="ui-g-3 ui-fluid">
+          <label>Código</label>
+          <input [readonly]= "true" type="text" pInputText ng-model="text" name="id" formControlName="id">
+        </div>
+
+        <div class="ui-g-12">
+          <label>Título</label>
+          <input type="text" pInputText ng-model="text" name="nomelinha" formControlName="nomelinha"
+            style="text-transform:uppercase">
+        </div>
+
+        <div class="ui-g-12">
+          <label>Descrição</label>
+          <input type="text" pInputText ng-model="text" name="descricao" formControlName="descricao"
+            style="text-transform:uppercase">
+        </div>
+
+        <div class="ui-g-12">
+          <label>Cor</label>
+          <input type="text" pInputText ng-model="text" name="cor" formControlName="cor"
+            style="text-transform:uppercase">
+        </div>
+
+        <div class="ui-g-12 ui-fluid">
+          <div style="text-align: left;">
+            <button class="btn btn-primary" type="submit" style="margin-right: 8px;">Salvar</button>
+            <button class="btn btn-outline-secondary" routerLink="/linhas">Cancelar</button>
+          </div>
+
+          <div style="text-align: right;">
+            <a routerLink="/linhas">Voltar para a pesquisa</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </p-fieldset>
+</div>
+

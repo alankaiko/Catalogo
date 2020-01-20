@@ -1,6 +1,6 @@
 #painelEsquerdo {
 	position: absolute;
-	width: 20.5%;
+  width: 20.5%;
 	float: left;
 }
 
@@ -52,7 +52,7 @@
 }
 
 #layout-menu li a .icone:hover {
-	color: #ff88c7;
+	color: #7B95A3;
 }
 
 #layout-menu li:hover {

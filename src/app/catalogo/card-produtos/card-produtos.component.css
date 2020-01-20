@@ -1,6 +1,8 @@
 .cartao {
   text-transform:uppercase;
+  font-family: 'Source Sans Pro';
 }
+
 
 .cartao .subtitulo {
   font-size: 70%;

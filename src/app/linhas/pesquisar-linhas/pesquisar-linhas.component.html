@@ -1,44 +1,14 @@
 <div class="linha">
-  <div class="container">
-    <div class="ui-g">
-      <h3>{{ editando ? 'Editar' : 'Cadastrar'}} Linha</h3>
-      <div class="ui-g-12 ui-fluid" style="border-bottom: 1px solid;">
-        <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="Salvar()">
-          <div class="ui-g-3">
-            <label>Linha</label>
-            <input type="text" pInputText ng-model="text" name="nomelinha" formControlName="nomelinha"
-              style="text-transform:uppercase">
-          </div>
-
-          <div class="ui-g-6">
-            <label>Descrição</label>
-            <input type="text" pInputText ng-model="text" name="descricao" formControlName="descricao"
-              style="text-transform:uppercase">
-          </div>
-
-          <div class="ui-g-2">
-            <label>Cor</label>
-            <input type="text" pInputText ng-model="text" name="cor" formControlName="cor"
-              style="text-transform:uppercase">
-          </div>
-
-          <div class="ui-g-1" style="text-align: right; margin-top: 33px;">
-            <button class="btn btn-primary" type="submit" (click)="Consultar(0)">Salvar</button>
-          </div>
-
-        </form>
-      </div>
-
-
-      <div>
+  <div class="ui-g">
+      <div class="ui-g-12">
         <p-table id="tabela" [value]="linhas" [responsive]="true" [paginator]="true" [rows]="filtro.itensPorPagina"
           [lazy]="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)">
           <ng-template pTemplate="header">
               <tr>
                   <th style="width: 8%;">Código</th>
-                  <th style="width: 15%;">Linha</th>
-                  <th style="width: 40%;">Descrição</th>
-                  <th style="width: 40%;">Cor</th>
+                  <th style="width: 15%;">Título</th>
+                  <th style="width: 30%;">Descrição</th>
+                  <th style="width: 20%;">Cor</th>
                   <th style="width: 10%; text-align: center;">Opções</th>
               </tr>
           </ng-template>
@@ -49,17 +19,25 @@
                   <td>{{linha.descricao}}</td>
                   <td>{{linha.cor}}</td>
                   <td style="text-align: center;">
+                    <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                      [routerLink]="['/linha', linha.id]"></a>
+
                     <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
                       (click)="Excluir(linha)"></button>
                   </td>
               </tr>
           </ng-template>
-      </p-table>
+        </p-table>
       </div>
+
+      <div class="ui-g-12" style="text-align: right;">
+        <a pButton label="Novo Registro" routerLink="/linha/novo"></a>
+      </div>
+
     </div>
-
-  </div>
-
 </div>
+
+
+
 
 

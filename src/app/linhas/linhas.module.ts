@@ -1,3 +1,6 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CadastroLinhasComponent } from './cadastro-linhas/cadastro-linhas.component';
 import { PesquisarLinhasComponent } from './pesquisar-linhas/pesquisar-linhas.component';
 import { TooltipModule } from 'primeng/components/tooltip/tooltip';
 import { HttpClientModule } from '@angular/common/http';
@@ -5,15 +8,15 @@ import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {TableModule} from 'primeng/components/table/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import {FieldsetModule} from 'primeng/components/fieldset/fieldset';
 
 
 
 @NgModule({
-  declarations: [PesquisarLinhasComponent],
+  declarations: [CadastroLinhasComponent, PesquisarLinhasComponent],
   imports: [
     CommonModule,
     TableModule,
@@ -24,7 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    TooltipModule
+    TooltipModule,
+    RouterModule,
+    FieldsetModule
   ],
   exports: [
     PesquisarLinhasComponent

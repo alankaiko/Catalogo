@@ -2,6 +2,10 @@ input {
   background-color: #fff;
 }
 
+button{
+  margin-left: 5px;
+}
+
 .linha {
   width: 90%;
   height: auto;

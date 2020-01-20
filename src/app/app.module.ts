@@ -1,6 +1,7 @@
-import { PesquisarLinhasComponent } from './linhas/pesquisar-linhas/pesquisar-linhas.component';
-import { DetalheProdutoComponent } from './cadastro/detalhe-produto/detalhe-produto.component';
+import { CadastroGruposComponent } from './grupos/cadastro-grupos/cadastro-grupos.component';
+import { CadastroLinhasComponent } from './linhas/cadastro-linhas/cadastro-linhas.component';
 import { LinhasModule } from './linhas/linhas.module';
+import { DetalheProdutoComponent } from './cadastro/detalhe-produto/detalhe-produto.component';
 import { GruposModule } from './grupos/grupos.module';
 import { PesquisarGruposComponent } from './grupos/pesquisar-grupos/pesquisar-grupos.component';
 import { CadastroModule } from './cadastro/cadastro.module';
@@ -20,6 +21,7 @@ import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/components/table/table';
+import { PesquisarLinhasComponent } from './linhas/pesquisar-linhas/pesquisar-linhas.component';
 
 
 
@@ -28,8 +30,12 @@ const rotas: Routes = [
   { path: 'produtos/novo', component: CadastroProdutoComponent },
   { path: 'produtos/:cod', component: CadastroProdutoComponent },
   { path: 'grupos', component: PesquisarGruposComponent },
+  { path: 'grupo/novo', component: CadastroGruposComponent },
+  { path: 'grupo/:cod', component: CadastroGruposComponent },
+  { path: 'detalhes/:cod', component: DetalheProdutoComponent },
   { path: 'linhas', component: PesquisarLinhasComponent },
-  { path: 'detalhes/:cod', component: DetalheProdutoComponent }
+  { path: 'linha/novo', component: CadastroLinhasComponent },
+  { path: 'linha/:cod', component: CadastroLinhasComponent }
 ];
 
 @NgModule({
@@ -50,8 +56,8 @@ const rotas: Routes = [
     CatalogoModule,
     CadastroModule,
     GruposModule,
-    LinhasModule,
-    RouterModule.forRoot(rotas)
+    RouterModule.forRoot(rotas),
+    LinhasModule
   ],
   exports: [
     CadastroModule

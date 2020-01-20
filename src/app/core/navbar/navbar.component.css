@@ -25,6 +25,12 @@
 
 :host /deep/ p-menubar .ui-menubar{
   border: none;
+  font-weight: bold;
+  font-family: 'Source Sans Pro';
+}
+
+:host /deep/ p-menubar .ui-menubar .ui-button-text{
+  font-family: 'Source Sans Pro';
 }
 
 .menuInicial .logo {

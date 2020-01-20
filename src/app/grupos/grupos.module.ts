@@ -10,10 +10,12 @@ import { PesquisarGruposComponent } from './pesquisar-grupos/pesquisar-grupos.co
 import {TableModule} from 'primeng/components/table/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CadastroGruposComponent } from './cadastro-grupos/cadastro-grupos.component';
+import {FieldsetModule} from 'primeng/components/fieldset/fieldset';
 
 
 @NgModule({
-  declarations: [PesquisarGruposComponent],
+  declarations: [PesquisarGruposComponent, CadastroGruposComponent],
   imports: [
     CommonModule,
     TableModule,
@@ -25,7 +27,8 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     ReactiveFormsModule,
     TooltipModule,
-    RouterModule
+    RouterModule,
+    FieldsetModule
   ],
   exports: [
     PesquisarGruposComponent
