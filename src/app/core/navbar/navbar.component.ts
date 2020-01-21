@@ -13,6 +13,9 @@ export class NavbarComponent implements OnInit {
     ngOnInit() {
       this.items = [
         {
+          label: 'Home', routerLink: ['inicial']
+        },
+        {
           label: 'Catálogo', routerLink: ['produtos']
         },
         {

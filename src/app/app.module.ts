@@ -1,3 +1,5 @@
+import { PaginasModule } from './paginas/paginas.module';
+import { HomeComponent } from './paginas/home/home.component';
 import { CadastroGruposComponent } from './grupos/cadastro-grupos/cadastro-grupos.component';
 import { CadastroLinhasComponent } from './linhas/cadastro-linhas/cadastro-linhas.component';
 import { LinhasModule } from './linhas/linhas.module';
@@ -35,7 +37,8 @@ const rotas: Routes = [
   { path: 'detalhes/:cod', component: DetalheProdutoComponent },
   { path: 'linhas', component: PesquisarLinhasComponent },
   { path: 'linha/novo', component: CadastroLinhasComponent },
-  { path: 'linha/:cod', component: CadastroLinhasComponent }
+  { path: 'linha/:cod', component: CadastroLinhasComponent },
+  { path: 'inicial', component: HomeComponent }
 ];
 
 @NgModule({
@@ -57,7 +60,8 @@ const rotas: Routes = [
     CadastroModule,
     GruposModule,
     RouterModule.forRoot(rotas),
-    LinhasModule
+    LinhasModule,
+    PaginasModule
   ],
   exports: [
     CadastroModule

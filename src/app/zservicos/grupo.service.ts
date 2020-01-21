@@ -8,7 +8,7 @@ export class GrupoFiltro {
   abreviacao: string;
   nomegrupo: string;
   pagina = 0;
-  itensPorPagina = 7;
+  itensPorPagina = 2;
 }
 
 @Injectable({
