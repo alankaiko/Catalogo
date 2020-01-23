@@ -5,14 +5,30 @@
         [lazy]="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)" layout="grid">
         <p-header class="ui-g">
             <form class="ui-g-12" autocomplete="off" (ngSubmit)="Consultar()">
-              <input class="pesquisacod" pInputText type="text" name="codigo"
-                [(ngModel)]="filtro.codigo" placeholder="Código do Produto">
+              <div class="ui-g-2">
+                <input style="width: 90%;" class="pesquisacod" pInputText type="text" name="codigo"
+                  [(ngModel)]="filtro.codigo" placeholder="Código do Produto">
+                  <span> +</span>
+              </div>
 
-              <input class="pesquisadesc" pInputText type="text" name="codigo"
-                [(ngModel)]="filtro.descricao" placeholder="Descrição do Produto">
+              <div class="ui-g-3">
+                <input style="width: 90%;" class="pesquisadesc" pInputText type="text" name="codigo"
+                  [(ngModel)]="filtro.descricao" placeholder="Descrição do Produto">
+                  <span> +</span>
+              </div>
 
-              <button class=" botaopesquisar btn btn-light" style="width: 15%; float: right;" type="submit">Pesquisar</button>
-              <button class=" iconepesquisar btn btn-light pi pi-search" type="submit"></button>
+
+              <div class="ui-g-4">
+
+                <input style="width: 100%;" class="pesquisacomp" pInputText type="text" name="codigo"
+                  [(ngModel)]="filtro.descricacomplementar" placeholder="Complemento">
+              </div>
+
+              <div class="ui-g-3">
+                <button class=" botaopesquisar btn btn-light" style=" float: right;" type="submit">Pesquisar</button>
+                <button class=" iconepesquisar btn btn-light pi pi-search" type="submit"></button>
+              </div>
+
             </form>
         </p-header>
 

@@ -4,18 +4,21 @@
 }
 
 :host /deep/ p-dataView .ui-dataview-header{
-  background-color:#428bca;
-  border:1px solid #428bca;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    background-color: #333333;
+    background-image: -webkit-gradient(linear, left top, right top, from(#333333), to(#5A5D60));
+    background-image: -webkit-linear-gradient(left, #333333, #5A5D60);
+    border:1px solid #2C2C2C;
 }
 
 :host /deep/ p-dataView .ui-dataview-content{
-  border:1px solid #428bca;
+  border:1px solid #2C2C2C;
 }
 
 :host /deep/ p-dataView .ui-paginator-bottom {
-  border-bottom:1px solid #428bca;
-  border-left:1px solid #428bca;
-  border-right: 1px solid #428bca;
+  border-bottom:1px solid #2C2C2C;
+  border-left:1px solid #2C2C2C;
+  border-right: 1px solid #2C2C2C;
 }
 
 .pesquisacod {
@@ -61,4 +64,12 @@
     float: right;
     margin-top: 1px;
   }
+}
+
+
+span {
+  color: rgb(241, 241, 241);
+  font-size: 120%;
+  font-weight: bold;
+  padding-left: 4px;
 }
