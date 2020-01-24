@@ -1,26 +1,82 @@
-<h1>{{ editando ? 'Editar' : 'Novo'}} Produto</h1>
-<div class="classecad">
+<div class="classecad ui-g">
   <p-fieldset legend="{{ editando ? 'Editar' : 'Novo'}}">
     <form autocomplete="off" [formGroup]="formulario" (ngSubmit)="Salvar()" class="formu">
-      <div class="p-grid">
-        <div class="ui-g-12 ui-md-6 ui-lg-4 ui-fluid">
+      <p-toolbar>
+        <div class="ui-toolbar-group-left">
+          <button class="btn btn-success" type="button">Novo</button>
+
+          <button style="margin-left: 7px;" class="btn btn-primary" type="submit">Salvar</button>
+        </div>
+
+        <div class="ui-toolbar-group-right">
+            <button pButton type="button" icon="pi pi-times" class="ui-button-danger" routerLink="/produtos"></button>
+        </div>
+      </p-toolbar>
+
+      <div class="ui-g-8 ui=fluid">
+        <div class="ui-g-6 ui-fluid">
           <label>Código</label>
           <input [readonly]= "editando" type="text" pInputText ng-model="text" name="codigo" formControlName="codigo"
              required (keypress)="caractereespecial($event)" style="text-transform:uppercase">
         </div>
 
-        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+        <div class="ui-g-3 ui-fluid">
+          <label>Data Incl.</label>
+          <p-calendar name="datainclusao" dateFormat="dd/mm/yy"
+            [inline]="false" [readonlyInput]="false" [showIcon]="false"
+            formControlName="datainclusao"></p-calendar>
+        </div>
+
+        <div class="ui-g-12 ui-fluid">
           <label>Descrição</label>
           <input type="text" pInputText ng-model="text" name="descricao" formControlName="descricao"
             style="text-transform:uppercase">
         </div>
 
-        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
+        <div class="ui-g-12 ui-fluid">
           <label>Desc. Complementar</label>
           <input type="text" pInputText ng-model="text" name="descricaocomplementar"
             formControlName="descricaocomplementar" style="text-transform:uppercase">
         </div>
 
+        <div class="ui-g-6 ui-fluid">
+          <label>Referência</label>
+          <input type="text" pInputText ng-model="text" name="referencia" formControlName="referencia">
+        </div>
+
+        <div class="ui-g-3 ui-fluid" formGroupName="propriedades">
+          <label>Custo</label>
+          <input type="text" pInputText ng-model="text" name="custo" formControlName="custo">
+        </div>
+
+        <div class="ui-g-3 ui-fluid" formGroupName="propriedades">
+          <label>Preço</label>
+          <input type="text" pInputText ng-model="text" name="preco" formControlName="preco">
+        </div>
+
+        <div class="ui-g-3 ui-fluid" formGroupName="propriedades">
+          <label>Unidade</label>
+          <input type="text" pInputText ng-model="text" name="unidade" formControlName="unidade">
+        </div>
+
+        <div class="ui-g-3 ui-fluid" formGroupName="propriedades">
+          <label>KG/m</label>
+          <input (keypress)="CaracterPeso($event)" type="text" maxlength="6" pInputText ng-model="text"
+          name="peso" formControlName="peso" placeholder="0.00">
+        </div>
+
+        <div class="ui-g-3 ui-fluid" formGroupName="propriedades">
+          <label>Tam.</label>
+          <input type="text" pInputText ng-model="text" name="tamanho" formControlName="tamanho">
+        </div>
+
+        <div class="ui-g-3 ui-fluid" formGroupName="propriedades">
+          <label>Estoque</label>
+          <p-inputSwitch formControlName="estoque" name="estoque"></p-inputSwitch>
+        </div>
+      </div>
+
+      <div class="ui-g-4">
         <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid" formGroupName="linha">
           <label>Linha</label>
           <p-dropdown formControlName="id" [options]="linhas" placeholder="Selecione" name="linha"></p-dropdown>
@@ -31,21 +87,18 @@
           <p-dropdown formControlName="id" [options]="grupos" [autoWidth]="false" placeholder="Selecione o grupo" name="grupo"></p-dropdown>
         </div>
 
-        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
-          <label>KG/m</label>
-          <input (keypress)="CaracterPeso($event)" type="text" maxlength="6" pInputText ng-model="text" name="peso" formControlName="peso" placeholder="0.00">
+        <div class="ui-g-12 ui-fluid" formGroupName="cor">
+          <label>Cor</label>
+          <input type="text" pInputText ng-model="text" name="cor" formControlName="cor">
         </div>
 
         <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid" style="text-align: right;">
           <h3 class="first">Adicionar Imagens</h3>
           <input type="file" (change)="inputFileChange($event)"/>
         </div>
-
-        <div class="ui-g-12 ui-md-12 ui-lg-12 ui-fluid">
-          <button class="btn btn-primary" type="submit" style="margin-right: 8px;">Salvar</button>
-          <button class="btn btn-outline-secondary" routerLink="/produtos">Cancelar</button>
-        </div>
       </div>
+
+
     </form>
   </p-fieldset>
 </div>

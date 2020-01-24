@@ -82,6 +82,8 @@ export class CadastroProdutoComponent implements OnInit {
       codigo: [null, produto.codigo],
       descricao: [null, produto.descricao],
       descricaocomplementar: [null, produto.descricaocomplementar],
+      referencia: [null, produto.referencia],
+      datainclusao: [null, produto.datainclusao],
       imagem: [],
       grupo: this.formbuilder.group({
         id: [Validators.required]
@@ -89,7 +91,17 @@ export class CadastroProdutoComponent implements OnInit {
       linha: this.formbuilder.group({
         id: [Validators.required],
       }),
-      peso: [null, produto.peso]
+      propriedades: this.formbuilder.group({
+        custo: [produto.propriedades.custo],
+        preco: [produto.propriedades.preco],
+        unidade: [produto.propriedades.unidade],
+        peso: [produto.propriedades.peso],
+        tamanho: [produto.propriedades.tamanho],
+        estoque: [produto.propriedades.estoque]
+      }),
+      cor: this.formbuilder.group({
+        cor: [produto.cor.cor]
+      })
     });
   }
 

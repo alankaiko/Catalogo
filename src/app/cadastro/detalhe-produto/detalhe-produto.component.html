@@ -1,21 +1,49 @@
   <section>
-    <div class="classe ui-g ui-fluid">
-        <div class="ui-g-12">
-          <div style="float: left;">
-            <span>cod: <label> {{produto?.codigo}}</label></span><br>
-          </div>
-
-          <div style="float: right; display: inline;">
-            <span>peso: <label>Peso: {{produto?.peso}} Kg/m</label></span><br>
-            <span>Dimensão: <label>Peça com {{produto?.tamanho}}m</label></span><br>
-          </div>
-
+    <div class="ui-g">
+      <div class="ui-g-8 ui-fluid">
+        <div style="float: left;">
+          <span>cod: <label> {{produto?.codigo}}</label></span><br>
         </div>
 
         <img class="laitimagem" [attr.src]="imagelightbox">
+      </div>
 
-        <div class="ui-g ui-fluid">
+      <div class="ui-g-4 ui-fluid" style="padding-top: 35px;">
+        <div>
+          <span>cod: <label> {{produto?.codigo}}</label></span>
+        </div>
+
+        <div>
+          <span>Referência: <label> {{produto?.referencia}}</label></span>
+        </div>
+
+        <div>
           <span>Desc: <label>{{produto?.descricao}}</label></span><br>
         </div>
+
+        <div>
+          <span>Compl.: <label> {{produto?.descricaocomplementar}}</label></span>
+        </div>
+        <div>
+          <span>Grupo: <label> {{produto?.grupo.nomegrupo}}</label></span>
+        </div>
+        <div>
+          <span>Linha: <label> {{produto?.linha.descricao}}</label></span>
+        </div>
+        <div>
+          <span>peso: <label>Peso: {{produto?.propriedades.peso}} Kg/m</label></span>
+          <span>Dimensão: <label>Peça com {{produto?.propriedades.tamanho}}m</label></span>
+          <span>Unidade: <label>Peça com {{produto?.propriedades.unidade}}m</label></span>
+        </div>
+        <div>
+          <span>cor: <label>Peso: {{produto?.cor.cor}} Kg/m</label></span>
+        </div>
+      </div>
+
+      <div class="ui-g-12" style="border: 1px solid;">
+        <h4>Similares Teste</h4>
+
+      </div>
     </div>
+
   </section>
